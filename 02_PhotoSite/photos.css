@@ -2,3 +2,36 @@ img {
     width: 30%;
     margin: calc(10%/6);
 }
+
+nav {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    color: black;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 96.5%;
+    margin-left: calc(10%/6);
+    padding: 0;
+
+}
+
+#FirstName {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    margin-right: -6px;
+}
+
+#Slash {
+    font-weight: normal;
+    color: lightgrey;
+    margin-bottom: 5px;
+}
+
+#LastName {
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 5px;
+    margin-left: -6px;
+}
+
