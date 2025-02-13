@@ -1,11 +1,6 @@
 img {
     width: 30%;
     margin: calc(10%/6);
-    transition: transform 0.2s; /* Smooth zoom effect */
-}
-
-img:hover {
-    transform: scale(1.05); /* Zoom in on hover */
 }
 
 nav {
@@ -17,47 +12,26 @@ nav {
     width: 96.5%;
     margin-left: calc(10%/6);
     padding: 0;
+
 }
 
 #FirstName {
-    font-weight: bolder;
+    font-weight: bold;
     color: black;
+    margin-bottom: 5px;
     margin-right: -6px;
 }
 
 #Slash {
     font-weight: normal;
     color: lightgrey;
+    margin-bottom: 5px;
 }
 
 #LastName {
-    font-weight: bold;
+    font-weight: normal;
     color: #333;
+    margin-bottom: 5px;
     margin-left: -6px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    img {
-        width: 45%;
-        margin: calc(10%/8);
-    }
-
-    nav {
-        font-size: 1.2em;
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-}
-
-@media (max-width: 480px) {
-    img {
-        width: 100%;
-        margin: 5% 0;
-    }
-
-    nav {
-        font-size: 1em;
-    }
 }
 
