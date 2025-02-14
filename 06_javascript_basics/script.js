@@ -1,7 +1,7 @@
-let num = Math.random();
-console.log(num);
-if (num < 0.5) {
-    console.log("Your number is less than 0.5!");
-} else {
-    console.log("Your number is greater than 0.5!");
-}
+const person = {
+    firstName: 'John', 
+    lastName: 'Rooke'
+};
+
+document.getElementById('firstName').textContent = person.firstName;
+document.getElementById('lastName').textContent = person.lastName;
