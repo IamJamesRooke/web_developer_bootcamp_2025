@@ -24,7 +24,5 @@ h1 {
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    font-weight: 800; /* Much thicker font weight */
-    flex-wrap: wrap;
-    align-content: center;
 }
+    alignce
