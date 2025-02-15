@@ -1,0 +1,35 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+p {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.command {
+    font-weight: bold;
+    font-style: italic;
+    color: #4CAF50;
+}
+
+@media (max-width: 600px) {
+    p {
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
