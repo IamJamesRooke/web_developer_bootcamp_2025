@@ -10,9 +10,9 @@
 
 <body>
     <section class="section">
-        <div id="container">
-            <div id="columns">
-                <div class="column is-half is-offset-one-quarter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
                     <div class="card">
 
                         <!-- Image -->
@@ -36,20 +36,21 @@
                                 <p class="subtitle">Use buttons below to keep score.</p>
                                 
                                 <label for="playto" class="label is-large is-inline">Playing to:</label>
-                            <div class="select is-rounded">
-                                <select name="" id="playto">
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="7">7</option>
-                                </select>
+                                <div class="select is-rounded">
+                                    <select id="playto">
+                                        <option value="3">3</option>
+                                        <option value="5">5</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Footer -->
                         <footer class="card-footer">
-                            <button id="p1Button" class="is-primary button card-footer-item">+1 Player One</button>
-                            <button id="p2Button" class="is-info button card-footer-item">+1 Player Two</button>
-                            <button id="reset" class="is-danger button card-footer-item">Reset</button>
+                            <button id="p1Button" class="button is-primary card-footer-item">+1 Player One</button>
+                            <button id="p2Button" class="button is-info card-footer-item">+1 Player Two</button>
+                            <button id="reset" class="button is-danger card-footer-item">Reset</button>
                         </footer>
                     </div>
                 </div>
