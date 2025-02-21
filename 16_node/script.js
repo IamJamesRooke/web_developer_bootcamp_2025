@@ -1,7 +1,7 @@
 console.log('Hello from script.js');
 
 for(arg in process.argv){
-    console.log(arg, process.argv[arg]);
+    console.log(arg, process.argv[arg].slice(2));
 }
 
 // const fs = require('fs');
