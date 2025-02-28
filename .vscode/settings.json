@@ -1,3 +1,5 @@
 {
-    "livePreview.defaultPreviewPath": "/20_RESTful_routes/getpost.html"
+    "livePreview.defaultPreviewPath": "/20_RESTful_routes/getpost.html",
+    "editor.fontFamily": "\"Fira Code\"",
+    "editor.fontSize": 18
 }
