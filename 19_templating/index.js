@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 });
 
+app.get('/cats', (req, res) => {
+    const cats = ['Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston'];
+    res.render('cats.ejs', { cats });
+});
+
 app.get('/random', (req, res) => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     res.render('random.ejs', { randomNumber: randomNumber });
