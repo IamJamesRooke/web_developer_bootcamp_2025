@@ -35,11 +35,21 @@ app.get('/dogs', (req, res) => {
     res.send('WOOF!')
 })
 
+app.get('/search', (req, res) => {
+    console.log(req.query)
+    const { q } = req.query;
+    if (!q) {
+        res.send('NOTHING SEARCHED')
+    }
+    res.send(`<h1>Search results for ${q}</h1>`)
+})
+
 app.get(/(.*)/, (req, res) => {
     console.log('UNKNOWN PATH')
     res.send('UNKNOWN PATH')
 })
 
-app.listen(port=8080, () => {
+
+app.listen(port=8070, () => {
     console.log(`LISTENING ON PORT ${port}`)
 })
