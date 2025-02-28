@@ -5,6 +5,10 @@ app.get('/tacos', (req, res) => {
     res.send('GET /tacos response');
 });
 
+app.post('/tacos', (req, res) => {
+    res.send('POST /tacos response');
+});
+
 app.listen(3000, () => { 
-    console.log('App listening on port 3000!'); 
+    console.log('Listening on port 3000!'); 
 });
