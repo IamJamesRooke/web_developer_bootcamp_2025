@@ -28,16 +28,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {	
     res.render('home');
 });
-// Home Route
-app.get('/makecampground', async (req, res) => {	
-    const camp = new Campground({
-        title: 'My Backyard', 
-        price: '0', 
-        description: 'Cheap camping!', 
-        location: 'My House'});
-    await camp.save();
-    res.send(camp);
-});
+
+app.get('/campgrounds', async (req, res) => {
+    const campgrounds = await Campground.find({});
+    res.render('campgrounds/index', { campgrounds })
+})
 
 // Listen on Port 3000
 app.listen(3000, () => {
