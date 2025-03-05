@@ -29,22 +29,32 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 // Async function to seed the database
 const seedDB = async () => {
-    // Delete all existing campgrounds
-    await Campground.deleteMany({});
-    
-    // Loop to create 50 new campgrounds
-    for (let i = 0; i < 50; i++) {
-        // Get a random index for cities array
-        const random1000 = Math.floor(Math.random() * 1000);
+    try {
+        // Delete all existing campgrounds
+        await Campground.deleteMany({});
         
-        // Create a new campground with random location and title
-        const camp = new Campground({
-            location: `${cities[random1000].city}, ${cities[random1000].state}`,
-            title: `${sample(descriptors)} ${sample(places)}`
-        });
-        
-        // Save the new campground to the database
-        await camp.save();
+        // Loop to create 50 new campgrounds
+        for (let i = 0; i < 50; i++) {
+            // Get a random index for cities array
+            const random1000 = Math.floor(Math.random() * 1000);
+            
+            // Random price generated
+            const price = Math.floor(Math.random() * 20) + 10;
+
+            // Create a new campground with random location and title
+            const camp = new Campground({
+                location: `${cities[random1000].city}, ${cities[random1000].state}`,
+                title: `${sample(descriptors)} ${sample(places)}`,
+                image: `https://picsum.photos/400?random=${Math.random()}`,
+                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus vel sequi at? Rem modi dignissimos aliquam itaque a suscipit.',
+                price: price
+            });
+            
+            // Save the new campground to the database
+            await camp.save();
+        }
+    } catch (err) {
+        console.error("Error seeding the database:", err);
     }
 }
 
