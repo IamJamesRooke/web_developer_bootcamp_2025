@@ -1,8 +1,7 @@
-// This file contains the schema for the Campground model
 const mongoose = require('mongoose');
+const Review = require('./review')
 const Schema = mongoose.Schema;
 
-// Define the Campground Schema
 const CampgroundSchema = new Schema({
     title: String,
     image: String,
@@ -17,5 +16,14 @@ const CampgroundSchema = new Schema({
     ]
 });
 
-// Export the Campground model
+CampgroundSchema.post('findOneAndDelete', async function (doc) {
+    if (doc) {
+        await Review.deleteMany({
+            _id: {
+                $in: doc.reviews
+            }
+        })
+    }
+})
+
 module.exports = mongoose.model('Campground', CampgroundSchema);
