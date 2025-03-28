@@ -1,18 +1,28 @@
 const express = require('express');
 const app = express();
 
-const shelterRoutes = require('./routes/shelters'); // Use require for consistency
-const dogRoutes = require('./routes/dogs'); // Use require for consistency
-const adminRoutes = require('./routes/admin')
-
-
+const shelterRoutes = require('./routes/shelters');
+const dogRoutes = require('./routes/dogs');
+const adminRoutes = require('./routes/admin');
 
 app.use(`/shelters`, shelterRoutes);
 app.use(`/dogs`, dogRoutes);
 app.use(`/admin`, adminRoutes);
 
+// Cookies
+const cookieParser = require('cookie-parser');
+app.use(cookieParser())
 
+app.get('/greet', (req, res) => {
+   const { name = 'No Name'} = req.cookies;
+    res.send(`"Hello ${name}!"`)
+})
 
+app.get('/setname', (req, res) => {
+    res.cookie('name', 'James Rooke');
+    res.cookie('color', 'Blue');
+    res.send('Cookie Sent');
+})
 
 app.listen(port=3000, () => {
     console.log(`Serving app on localhost:${port}`);
