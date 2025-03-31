@@ -57,11 +57,20 @@ app.post('/login', async (req, res) => {
     res.redirect('/login');
 })
 
+app.post('/logout', (req, res) => {
+    req.session.user_id = null;
+    req.session.destroy();
+    res.redirect('/login');
+
+})
+
+
+
 app.get('/secret', (req, res) => {
     if (!req.session.user_id) {
         return res.redirect('/login');
     }
-    res.send('secret'); // Ensure you have a 'secret.ejs' file in your views folder
+    res.render('secret'); // Ensure you have a 'secret.ejs' file in your views folder
 })
 
 
