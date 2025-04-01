@@ -43,6 +43,7 @@ const seedDB = async () => {
 
             // Create a new campground with random location and title
             const camp = new Campground({
+                author: '67ec09267aea49c46edf4196',
                 location: `${cities[random1000].city}, ${cities[random1000].state}`,
                 title: `${sample(descriptors)} ${sample(places)}`,
                 image: `https://picsum.photos/400?random=${Math.random()}`,
