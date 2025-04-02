@@ -6,13 +6,13 @@ const catchAsync = require('../utils/catchAsync');
 const User = require('../models/user');
 const users = require('../controllers/users')
 
-router.get('/register', users.renderRegister);
+router.route('/register')
+    .get(users.renderRegister)
+    .post(catchAsync(users.register))
 
-router.post('/register', catchAsync(users.register));
-
-router.get('/login', users.renderLoginForm);
-
-router.post('/login', users.loginUser);
+router.route('/login')
+    .get(users.renderLoginForm)
+    .post(users.loginUser)
 
 router.get('/logout', users.logoutUser); 
 
