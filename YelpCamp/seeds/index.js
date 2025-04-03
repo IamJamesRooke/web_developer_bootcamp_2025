@@ -46,9 +46,18 @@ const seedDB = async () => {
                 author: '67ec09267aea49c46edf4196',
                 location: `${cities[random1000].city}, ${cities[random1000].state}`,
                 title: `${sample(descriptors)} ${sample(places)}`,
-                image: `https://picsum.photos/400?random=${Math.random()}`,
                 description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus vel sequi at? Rem modi dignissimos aliquam itaque a suscipit.',
-                price: price
+                price: price,
+                images: [
+                    {
+                      url: 'https://res.cloudinary.com/dvllefkx8/image/upload/v1743703902/YelpCamp/c9oe08tw3nqw9xsqt64d.png',
+                      filename: 'YelpCamp/c9oe08tw3nqw9xsqt64d',
+                    },
+                    {
+                      url: 'https://res.cloudinary.com/dvllefkx8/image/upload/v1743703903/YelpCamp/erxr2p66chksfxvfxoji.jpg',
+                      filename: 'YelpCamp/erxr2p66chksfxvfxoji',
+                    }
+                  ],
             });
             
             // Save the new campground to the database

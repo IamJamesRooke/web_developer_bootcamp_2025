@@ -2,7 +2,7 @@
 <h1 class="text-center">Edit Campground</h1>
     <div class="col-6 offset-3">
         <!-- Form to create a new campground -->
-        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
 
             <!-- Title input field -->
             <div class="mb-3">
@@ -16,12 +16,7 @@
                 <input class="form-control" type="text" id="location" name="campground[location]" 
                 value="<%= campground.location %>" required>
             </div>
-            <!-- Image URL input field -->
-            <div class="mb-3">
-                <label class="form-label" for="image">Image Url</label>
-                <input class="form-control" type="text" id="image" name="campground[image]"
-                value="<%= campground.image %>" required>
-            </div>
+
             <!-- Price input field -->
             <div class="mb-3">
                 <label for="price" class="form-label">Campground Price</label>
@@ -37,6 +32,17 @@
             <div class="mb-3">
                 <label class="form-label" for="description">Description</label>
                 <textarea class="form-control" id="description" name="campground[description]" required><%= campground.description %></textarea>
+            </div>
+            <!-- Image -->
+            <div class="mb-3">
+                <label >Upload Image</label>
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Add more images...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
             </div>
             <!-- Submit button -->
             <div class="mb-3">
