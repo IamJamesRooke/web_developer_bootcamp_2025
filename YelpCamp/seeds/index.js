@@ -43,11 +43,17 @@ const seedDB = async () => {
 
             // Create a new campground with random location and title
             const camp = new Campground({
+                
+                // Your User ID, hard coded
                 author: '67ec09267aea49c46edf4196',
                 location: `${cities[random1000].city}, ${cities[random1000].state}`,
                 title: `${sample(descriptors)} ${sample(places)}`,
                 description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus vel sequi at? Rem modi dignissimos aliquam itaque a suscipit.',
                 price: price,
+                geometry: { 
+                    type: 'Point', 
+                    coordinates: [ -79.24409, 43.15793 ] 
+                },
                 images: [
                     {
                       url: 'https://res.cloudinary.com/dvllefkx8/image/upload/v1743703902/YelpCamp/c9oe08tw3nqw9xsqt64d.png',
