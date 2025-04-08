@@ -40,14 +40,16 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 // Ensure the 'public' directory contains your CSS/JS files for the navbar.
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(mongoSanitize);
+app.use(mongoSanitize());
 
 const sessionConfig = {
+    name: 'session',
     secret: 'thisshouldbeabettersecret!',
     resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
+        // secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
