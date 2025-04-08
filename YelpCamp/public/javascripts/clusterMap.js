@@ -129,3 +129,7 @@ map.on('load', function () {
         map.getCanvas().style.cursor = '';
     });
 });
+
+map.on('touchmove', (e) => {
+    // Handle touchmove event
+}, { passive: true }); // Mark the event listener as passive
